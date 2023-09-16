@@ -9,9 +9,13 @@ contract DeploySimpleStorage is Script {
     function run() external returns (SimpleStorage) {
         vm.startBroadcast();
         SimpleStorage simpleStorage = new SimpleStorage();
-
         vm.stopBroadcast();
-
         return simpleStorage;
     }
 }
+
+// To Deploy command
+// forge script script/DeploySimpleStorage.s.sol --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --broadcast
+
+// Send Trans (in Wei) command
+// cast send --value 500000000000000000 --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY
